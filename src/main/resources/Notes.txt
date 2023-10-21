@@ -1,0 +1,31 @@
+Request vs Model vs Session
+
+	1. Requests
+When we are on one page, if redirected to another page the data (form data) will only available on that page,
+and no other subsequent pages (eg. email => welcome)
+
+	2. Model
+Suppose we pass add a value to model and pass to jsp, that value can only be used in that jsp,
+and no other subsequest jsps (eg.passing name from welcome => listTodos)
+
+	3. Session
+If we want to values to persist for multiple requests we use session , @SessionAttributes("attr_name") after @Controller
+the attribute must be put inside the model, then it can be used in different controllers using @SessionAttribute("attr_name")
+
+
+For bootstrap,jquery , add webjars in pom.xml and inside maven dependencies 
+
+copy "/META-INF/resources/webjars/bootstrap/5.1.3/css/bootstrap.min.css"
+copy "/META-INF/resources/webjars/bootstrap/5.1.3/js/bootstrap.min.js"
+copy "/META-INF/resources/webjars/jquery/3.6.0/jquery.min.js"
+
+
+If use wish to redirect from one view to another
+return "redirect:view_name.jsp"
+
+JSP Fragments can be made used inside views, which will allow us to have common elements across pages (eg. header, footer)
+<%@ include file="common/navigation.jspf"%>
+
+Spring security comes with a login page,logout page by default
+
+We setup credentials for spring security inside a configuration
